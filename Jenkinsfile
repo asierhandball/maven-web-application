@@ -16,7 +16,7 @@ pipeline {
         stage('CI Phase') {
             steps {
                 build 'Docker_Image_Control'
-                dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+                dependencyCheck additionalArguments: '', odcInstallation: 'D-C'
                 
             }
         }
