@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                     echo "asaluena/simple-devops-image:latest" > anchore_images
                 '''
-                anchore engineCredentialsId: 'Anchore_Image', engineRetries: '500', engineurl: 'http://172.31.13.28:8228/v1', name: 'anchore_images'
+                anchore bailOnFail: false, bailOnPluginFail: false, engineRetries: '600', name: 'anchore_images'
             }
         }
         stage('CD_Phase') {
