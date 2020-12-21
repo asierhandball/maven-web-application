@@ -55,7 +55,8 @@ pipeline {
             recordIssues enabledForFailure: true, tool: pmdParser(), sourceCodeEncoding: 'UTF-8', referenceJobName: 'Docker_Image_Control'
             recordIssues enabledForFailure: true, tool: spotBugs(), sourceCodeEncoding: 'UTF-8', referenceJobName: 'Docker_Image_Control'
             recordIssues enabledForFailure: true, tool: taskScanner(includePattern:'**/*.java', excludePattern:'target/**/*', highTags:'FIXME', normalTags:'TODO'), sourceCodeEncoding: 'UTF-8', referenceJobName: 'Docker_Image_Control'
-            dependencyCheckPublisher canComputeNew: false, defaultEncoding: '', healthy: '', pattern: '', unHealthy: ''}}
-
+            dependencyCheckPublisher ""
+        }
+    }
 }
 
