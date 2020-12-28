@@ -25,7 +25,7 @@ pipeline {
                 sh '''
                     echo "asaluena/simple-devops-image:latest" > anchore_images
                 '''
-                anchore bailOnFail: false, engineRetries: '600', name: 'anchore_images'
+                anchore engineRetries: '600', name: 'anchore_images'
             }
         }
         stage('CD_Phase') {
