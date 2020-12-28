@@ -33,18 +33,6 @@ pipeline {
                 build 'K8s_Deploying'
             }
         }
-        
-        
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
     }
     post {
         always {
